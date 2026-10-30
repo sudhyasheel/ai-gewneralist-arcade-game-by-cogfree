@@ -35,7 +35,6 @@
   }
   .help { margin:13px 0 0; text-align:center; color:#a8bad8; font-size:13px; line-height:1.7; }
   .help b { color:var(--cyan); }
-  .footer { margin-top:10px; color:#71809f; text-align:center; font-size:11px; line-height:1.5; }
 </style>
 </head>
 <body>
@@ -57,7 +56,6 @@
     <div class="save-message" id="saveMessage" aria-live="polite"></div>
   </div>
   <p class="help"><b>MOVE</b> JOYSTICK / WASD / ARROWS &nbsp; · &nbsp; <b>FIRE UP</b> FIRE BUTTON / SPACE</p>
-  <footer class="footer">LEVEL UP: THE AI GENERALIST ARCADE by Cogfree | Copyright © 2026 Cogfree Consulting LLP. All rights reserved.</footer>
 </main>
 <script>
 // CONFIG
@@ -506,6 +504,8 @@ function drawTitleScreen() {
   ctx.fillStyle='#a8bad8'; ctx.font='15px monospace'; ctx.fillText('Dodge the attacks. Grab the MCP power-up. Save your prompts.',W/2,447);
   ctx.fillStyle='#49f6ff'; ctx.font='15px monospace'; ctx.fillText('HOW TO PLAY: line up below a boss and fire straight up.',W/2,485);
   ctx.fillText(`AUTO-PLAY DEMO IN ${Math.max(1,Math.ceil(demo.wait))} SEC · TOP 10 BUTTON OPENS SCORES`,W/2,513);
+  ctx.fillStyle='#71809f'; ctx.font='12px monospace';
+  ctx.fillText('LEVEL UP: THE AI GENERALIST ARCADE by Cogfree | Copyright © 2026 Cogfree Consulting LLP. All rights reserved.',W/2,558);
   ctx.textAlign='left';
 }
 function drawDemoTitleScreen() {
@@ -521,8 +521,9 @@ function drawDemoTitleScreen() {
   for(const shot of demo.shots) { ctx.fillStyle='#ff7a1a'; ctx.beginPath(); ctx.arc(shot.x,shot.y,6,0,Math.PI*2); ctx.fill(); }
   pixelSprite(demo.playerX-16,demo.playerY-16,heroPixels,4);
   ctx.fillStyle='#49f6ff'; ctx.font='13px monospace'; ctx.fillText('AI GENERALIST',demo.playerX,demo.playerY+35);
-  ctx.fillStyle='#f4fbff'; ctx.font='14px monospace'; ctx.fillText(`HEARTS  ${'♥'.repeat(demo.hearts)}${'♡'.repeat(3-demo.hearts)}     HYDRAS DEFEATED  ${demo.kills}`,W/2,594);
-  ctx.fillStyle='#a8bad8'; ctx.font='13px monospace'; ctx.fillText('TAP / PRESS ENTER TO START · WASD / ARROWS MOVE · SPACE FIRES UP',W/2,618);
+  ctx.fillStyle='#f4fbff'; ctx.font='14px monospace'; ctx.fillText(`HEARTS  ${'♥'.repeat(demo.hearts)}${'♡'.repeat(3-demo.hearts)}     HYDRAS DEFEATED  ${demo.kills}`,W/2,562);
+  ctx.fillStyle='#a8bad8'; ctx.font='13px monospace'; ctx.fillText('TAP / PRESS ENTER TO START · WASD / ARROWS MOVE · SPACE FIRES UP',W/2,585);
+  ctx.fillStyle='#71809f'; ctx.font='11px monospace'; ctx.fillText('LEVEL UP: THE AI GENERALIST ARCADE by Cogfree | Copyright © 2026 Cogfree Consulting LLP. All rights reserved.',W/2,615);
   ctx.textAlign='left';
 }
 function drawIntroScreen() {
